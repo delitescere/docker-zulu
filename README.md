@@ -20,4 +20,8 @@ docker build -t delitescere/java:8 .
 docker run --rm -ti delitescere/java:8 sh -c 'java $JAVA_OPTS -XshowSettings'
 ```
 
+## Legal
+
+See the LICENSE file. Use of Zulu is governed by the terms of use at [http://www.azulsystems.com/products/zulu/terms-of-use](http://www.azulsystems.com/products/zulu/terms-of-use).
+
 Enjoy smaller containers!
