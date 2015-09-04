@@ -19,16 +19,16 @@ The [docker-squash](https://github.com/jwilder/docker-squash) tool is used to sq
 The [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/) image pre-squashed size is 245.8 MB, and after squashing it is just 165.1 MB.
 The [delitescere/java](https://hub.docker.com/r/delitescere/java/) image pre-squashed size is 90.43 MB, and after squashing it is just 73.27 MB.
 
+If you want the squashed size, you have to use `docker-squash` yourself on your final images. That's because it's a bit of a hack and you can't squash an image that is from another squashed image. Docker is working on the image formats and a proper squashing mechanism, so when it's done, I'll supply already-squashed images.
+
 ## Build
 
 Note: The Zulu Embedded JRE compact3 profile build supplied to me by Azul Systems is managed in this repository using [Git LFS](https://git-lfs.github.com/).
 
 ```sh
 docker build -t delitescere/jvm-prep prep
-docker build -t delitescere/jdk:latest-unsquashed jdk
-docker save delitescere/jdk:latest-unsquashed | sudo docker-squash -t delitescere/jdk | docker load
-docker build -t delitescere/java:latest-unsquashed jre
-docker save delitescere/java:latest-unsquashed | sudo docker-squash -t delitescere/java | docker load
+docker build -t delitescere/jdk jdk
+docker build -t delitescere/java jre
 ```
 TODO: fully automate this, including tagging with full Java versions
 
