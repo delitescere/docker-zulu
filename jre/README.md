@@ -1,6 +1,6 @@
 [![](https://badge.imagelayers.io/delitescere/java:latest.svg)](https://imagelayers.io/?images=delitescere/java:latest 'Get your own badge on imagelayers.io')
 
-This is a 90MB (73MB after squashing) image using the excellent gliberlabs/alpine base Docker image and the best OpenJDK: Azul's Zulu. https://www.azulsystems.com/products/zulu
+This image is 73MB after squashing. It uses the excellent [gliberlabs/alpine](https://hub.docker.com/r/gliderlabs/alpine/) base Docker image and the best OpenJDK: Azul's Zulu. https://www.azulsystems.com/products/zulu
 
 This is just the JRE compact3 profile. For full JDK (only 165 MB after squashing), see [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/).
 
