@@ -25,11 +25,12 @@ Note: The Zulu Embedded JRE compact3 profile build supplied to me by Azul System
 
 ```sh
 docker build -t delitescere/jvm-prep prep
-docker build -t jdk-unsquashed jdk
-docker save jdk-unsquashed | sudo docker-squash -t delitescere/jdk | docker load
-docker build -t jre-unsquashed jre
-docker save jre-unsquashed | sudo docker-squash -t delitescere/java | docker load
+docker build -t delitescere/jdk:latest-unsquashed jdk
+docker save delitescere/jdk:latest-unsquashed | sudo docker-squash -t delitescere/jdk | docker load
+docker build -t delitescere/java:latest-unsquashed jre
+docker save delitescere/java:latest-unsquashed | sudo docker-squash -t delitescere/java | docker load
 ```
+TODO: fully automate this, including tagging with full Java versions
 
 ## Example usage
 
