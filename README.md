@@ -9,12 +9,12 @@ In order to run Java, `glibc` is required. As Alpine Linux does not include `gli
 
 Two variants are supplied. One is the full Zulu OpenJDK and the other is Zulu JRE [compact3 profile](https://docs.oracle.com/javase/8/docs/technotes/guides/compactprofiles/compactprofiles.html). The compact3 profile is the heaviest of the three Oracle profiles for subsetted JRE and provides everything that most JVM components need. In future, the smaller profiles may also be provided, but the intention is to use Jigsaw from Java 9 to elimate anything that isn't required by each specific component.
 
-If you have a reasonable JVM component that only needs the Java runtime provided by compact3, use the "jre" image. If you need more than that, use the "jdk" image which comes with everything. You can use `jdeps` to determine if you only need more than the compact3 profile, or add the `-profile compact3` option to your `javac` command.
+If you have a reasonable JVM component that only needs the Java runtime provided by compact3, use the "jre" Dockerfile. If you need more than that, use the "jdk" Dockerfile which comes with everything. You can use `jdeps` to determine if you only need more than the compact3 profile, or add the `-profile compact3` option to your `javac` command.
  
 A huge thanks to the Zulu team at Azul Systems who have supplied the Zulu Embedded JRE compact3 profile build for Alpine Linux so everyone can benefit. If you use these images for production, I strongly encourage you to get a world-class support [subscription](http://www.azulsystems.com/products/zulu/support-packages).
 
 ## Docker images
-The script [docker-squash](https://github.com/jwilder/docker-squash) is used to squash the images after being built, eliminating intermediate layers.
+The [docker-squash](https://github.com/jwilder/docker-squash) tool is used to squash the images after being built, eliminating intermediate layers.
 
 The [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/) image pre-squashed size is 245.8 MB, and after squashing it is just 165.1 MB.
 The [delitescere/java](https://hub.docker.com/r/delitescere/java/) image pre-squashed size is 90.43 MB, and after squashing it is just 73.27 MB.
