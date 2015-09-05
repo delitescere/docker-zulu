@@ -14,12 +14,11 @@ If you have a reasonable JVM component that only needs the Java runtime provided
 A huge thanks to the Zulu team at Azul Systems who have supplied the Zulu Embedded JRE compact3 profile build for Alpine Linux so everyone can benefit. If you use these images for production, I strongly encourage you to get a world-class support [subscription](http://www.azulsystems.com/products/zulu/support-packages). NB: Even with a support subscrption, Azul Systems does not support this Docker image, just the JVM within it running on Alpine Linux.
 
 ## Docker images
-The [docker-squash](https://github.com/jwilder/docker-squash) tool is used to squash the images after being built, eliminating intermediate layers.
+The [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/) image is [![](https://badge.imagelayers.io/delitescere/jdk:latest.svg)](https://imagelayers.io/?images=delitescere/jdk:latest 'Get your own badge on imagelayers.io')
 
-The [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/) image pre-squashed size is 245.8 MB, and after squashing it is just 165.1 MB.
-The [delitescere/java](https://hub.docker.com/r/delitescere/java/) image pre-squashed size is 90.43 MB, and after squashing it is just 73.27 MB.
+The [delitescere/java](https://hub.docker.com/r/delitescere/java/) image is [![](https://badge.imagelayers.io/delitescere/java:latest.svg)](https://imagelayers.io/?images=delitescere/java:latest 'Get your own badge on imagelayers.io') and is just 69MB after squashing.
 
-If you want the squashed size, you have to use `docker-squash` yourself on your final images. That's because it's a bit of a hack and you can't squash an image that is from another squashed image. Docker is working on the image formats and a proper squashing mechanism, so when it's done, I'll supply already-squashed images.
+The [docker-squash](https://github.com/jwilder/docker-squash) tool can be used to squash images after being built, eliminating intermediate layers. I leave the squashing to you if you want to do it.
 
 ## Build
 
@@ -30,7 +29,7 @@ docker build -t delitescere/jvm-prep prep
 docker build -t delitescere/jdk jdk
 docker build -t delitescere/java jre
 ```
-TODO: fully automate this, including tagging with full Java versions
+TODO: Automate tagging with Java versions
 
 ## Example usage
 
