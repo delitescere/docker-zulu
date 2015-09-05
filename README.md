@@ -14,6 +14,8 @@ If you have a reasonable JVM component that only needs the Java runtime provided
 A huge thanks to the Zulu team at Azul Systems who have supplied the Zulu Embedded JRE compact3 profile build for Alpine Linux so everyone can benefit. If you use these images for production, I strongly encourage you to get a world-class support [subscription](http://www.azulsystems.com/products/zulu/support-packages). NB: Even with a support subscrption, Azul Systems does not support this Docker image, just the JVM within it running on Alpine Linux.
 
 ## Docker images
+Recent pushes may not be reflected in the size. Click the badge to get the latest data.
+
 The [delitescere/jdk](https://hub.docker.com/r/delitescere/jdk/) image is [![](https://badge.imagelayers.io/delitescere/jdk:latest.svg)](https://imagelayers.io/?images=delitescere/jdk:latest 'Get your own badge on imagelayers.io')
 
 The [delitescere/java](https://hub.docker.com/r/delitescere/java/) image is [![](https://badge.imagelayers.io/delitescere/java:latest.svg)](https://imagelayers.io/?images=delitescere/java:latest 'Get your own badge on imagelayers.io') and is just 69MB after squashing.

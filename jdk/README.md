@@ -1,4 +1,4 @@
-[![](https://badge.imagelayers.io/delitescere/jdk:latest.svg)](https://imagelayers.io/?images=delitescere/jdk:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/delitescere/jdk:latest.svg)](https://imagelayers.io/?images=delitescere/jdk:latest 'Get your own badge on imagelayers.io') Recent pushes may not be reflected in the size. Click the badge to get the latest data.
 
 This image uses the excellent [gliberlabs/alpine](https://hub.docker.com/r/gliderlabs/alpine/) base Docker image and the best OpenJDK: Azul's Zulu. https://www.azulsystems.com/products/zulu
 
