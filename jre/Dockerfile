@@ -15,4 +15,5 @@ RUN \
   rm -rf /var/cache/apk/* && \
   java -version
 
+ENV JAVA_HOME ${JRE}
 WORKDIR /root
