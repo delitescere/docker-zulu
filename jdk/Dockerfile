@@ -26,6 +26,7 @@ RUN \
   cd ${JAVA_HOME} && \
   rm -rf *.zip demo man sample && \
   for ff in ${JAVA_HOME}/bin/*; do f=$(basename $ff); if [ -e ${JRE}/bin/$f ]; then ln -snf ${JRE}/bin/$f $ff; fi; done && \
+  chmod a+w ${JRE}/lib ${JRE}/lib/net.properties && \
   rm -rf /var/cache/apk/*
 
 WORKDIR /root
