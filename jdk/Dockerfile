@@ -7,8 +7,8 @@ MAINTAINER josh@grahamis.com
 #
 # Replace duplicate files in JDK bin with links to JRE bin
 RUN \
-  checksum="a63294b466f1df1886c4f4832b696ec6" && \
-  url="http://cdn.azulsystems.com/zulu/2015-07-8.8-bin/zulu1.8.0_51-8.8.0.3-x86lx64.zip" && \
+  checksum="7aed58c4f80f5d9163168e564ea88f97" && \
+  url="http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_60-8.9.0.4-x86lx64.zip" && \
   referer="http://www.azulsystems.com/zuludoc" && \
   etag=$(curl -sI --referer "${referer}" "${url}" | awk -F"\"|:" '/^ETag: / {print $3}') && \
   if [ "X${checksum}" == "X${etag}" ]; then \
