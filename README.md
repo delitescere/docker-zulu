@@ -1,5 +1,7 @@
 # docker-zulu
 
+The "Smallest JVM containers in the world"™
+
 ## Introduction
 This uses the excellent [gliberlabs/alpine](https://github.com/gliderlabs/docker-alpine) base Docker image to build a minimal container for Java tasks and applications, running the best OpenJDK: [Azul's Zulu](http://www.azulsystems.com/products/zulu).
 
