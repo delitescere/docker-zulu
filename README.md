@@ -43,6 +43,6 @@ docker run --rm -ti delitescere/java:8 sh -c 'java $JAVA_OPTS -XshowSettings -ve
 
 ## Legal
 
-See the LICENSE file. Use of Zulu is governed by the terms of use at [https://www.azul.com/legal/terms-of-use/](https://www.azul.com/legal/terms-of-use/).
+See the LICENSE file.
 
 Enjoy smaller containers!
