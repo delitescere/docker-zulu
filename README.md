@@ -3,7 +3,7 @@
 The "Smallest JVM containers in the world"™
 
 ## Introduction
-This uses the excellent [gliberlabs/alpine](https://github.com/gliderlabs/docker-alpine) base Docker image to build a minimal container for Java tasks and applications, running the best OpenJDK: [Azul's Zulu](http://www.azulsystems.com/products/zulu).
+This uses the excellent [gliberlabs/alpine](https://github.com/gliderlabs/docker-alpine) base Docker image to build a minimal container for Java tasks and applications, running the best OpenJDK: [Azul's Zulu](https://zulu.org/).
 
 In order to run Java, `glibc` is required. As Alpine Linux does not include `glibc`, it is installed as an additional package.
 
@@ -13,7 +13,7 @@ Two variants are supplied. One is the full Zulu OpenJDK and the other is Zulu JR
 
 If you have a reasonable JVM component that only needs the Java runtime provided by compact3, use the "jre" Dockerfile. If you need more than that, use the "jdk" Dockerfile which comes with everything. You can use `jdeps` to determine if you only need more than the compact3 profile, or add the `-profile compact3` option to your `javac` command.
  
-A huge thanks to the Zulu team at Azul Systems who have supplied the Zulu Embedded JRE compact3 profile build for Alpine Linux so everyone can benefit. If you use these images for production, I strongly encourage you to get a world-class support [subscription](http://www.azulsystems.com/products/zulu/support-packages). NB: Even with a support subscrption, Azul Systems does not support this Docker image, just the JVM within it running on Alpine Linux.
+A huge thanks to the Zulu team at Azul Systems who have supplied the Zulu Embedded JRE compact3 profile build for Alpine Linux so everyone can benefit. If you use these images for production, I strongly encourage you to get a world-class support [subscription](https://www.azul.com/products/zulu/). NB: Even with a support subscrption, Azul Systems does not support this Docker image, just the JVM within it running on Alpine Linux.
 
 ## Docker images
 Recent pushes may not be reflected in the size. Click the badge to get the latest data.
@@ -43,6 +43,6 @@ docker run --rm -ti delitescere/java:8 sh -c 'java $JAVA_OPTS -XshowSettings -ve
 
 ## Legal
 
-See the LICENSE file. Use of Zulu is governed by the terms of use at [http://www.azulsystems.com/products/zulu/terms-of-use](http://www.azulsystems.com/products/zulu/terms-of-use).
+See the LICENSE file. Use of Zulu is governed by the terms of use at [https://www.azul.com/legal/terms-of-use/](https://www.azul.com/legal/terms-of-use/).
 
 Enjoy smaller containers!
