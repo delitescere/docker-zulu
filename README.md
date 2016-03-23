@@ -24,10 +24,9 @@ The [docker-squash](https://github.com/jwilder/docker-squash) tool can be used t
 
 ## Build
 
-Note: The Zulu Embedded JRE compact3 profile build supplied to me by Azul Systems is managed in this repository using [Git LFS](https://git-lfs.github.com/).
+Note: The Zulu Embedded JRE compact3 profile build supplied to me by Azul Systems is managed in this repository to improve the image size (`wget && tar && rm` is generally smaller than `COPY`).
 
 ```sh
-docker build -t delitescere/jvm-prep prep
 docker build -t delitescere/jdk jdk
 docker build -t delitescere/java jre
 ```
