@@ -13,7 +13,8 @@ WORKDIR /tmp
 
 RUN \
   echo ipv6 >> /etc/modules && \
-  apk add --update --no-cache --virtual=build-dependencies ca-certificates wget && \
+  echo 'http://dl-2.alpinelinux.org/alpine/v3.3/main/' > /etc/apk/repositories && \
+  apk add --no-cache --virtual=build-dependencies ca-certificates wget && \
   sed -i -e 's#:/bin/[^:].*$#:/sbin/nologin#' /etc/passwd && \
   chmod a=rx /etc/shinit.sh && \
   wget https://github.com/delitescere/docker-zulu/raw/master/zre8.13.0.5-cp3-jre8.0.72-linux_x64.tar.gz && \
