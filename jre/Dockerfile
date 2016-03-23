@@ -2,17 +2,16 @@ FROM delitescere/jvm-prep
 
 MAINTAINER josh@grahamis.com
 
-# If release changes, the file name needs to be changed (and included in git LFS)
-WORKDIR /tmp/java
-COPY zre1.8.0_60-8.9.0.4-compact3-x86lx64.txz /tmp/java/
+# If release changes, the file name needs to be changed
 RUN \
-  tar -xJf *.txz && \
-  rm *.txz && \
+  wget https://github.com/delitescere/docker-zulu/raw/master/jre/zre8.13.0.5-cp3-jre8.0.72-linux_x64.tar.gz && \
+  tar -xzf *.tar.gz && \
+  rm *.tar.gz && \
   mkdir -p $(dirname ${JRE}) && \
   mv * ${JRE} && \
   cd / && \
-  rm -rf /tmp/* && \
-  rm -rf /var/cache/apk/* && \
+  apk del ca-certificates wget && \
+  rm -rf /tmp/* /var/cache/apk/* && \
   java -version
 
 ENV JAVA_HOME ${JRE}
