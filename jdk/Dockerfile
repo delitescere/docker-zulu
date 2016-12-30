@@ -21,8 +21,8 @@ RUN \
   apk add --no-cache --virtual=build-dependencies ca-certificates wget && \
   sed -i -e 's#:/bin/[^:].*$#:/sbin/nologin#' /etc/passwd && \
   chmod a=rx /etc/shinit.sh && \
-  checksum="50b95832b1d072afc178d820e5680687" && \
-  url="http://cdn.azul.com/zulu/bin/zulu8.13.0.5-jdk8.0.72-linux_x64.tar.gz" && \
+  checksum="3f95d82bf8ece272497ae2d3c5b56c3b" && \
+  url="https://cdn.azul.com/zulu/bin/zulu8.19.0.1-jdk8.0.112-linux_x64.tar.gz" && \
   referer="http://zulu.org/download/" && \
   wget --referer "${referer}" "${url}" && \
   md5=$(md5sum *.tar.gz | cut -f1 -d' ') && \
