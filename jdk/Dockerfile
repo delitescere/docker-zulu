@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:alpine-3.5_glibc-2.24
+FROM frolvlad/alpine-glibc:alpine-3.5_glibc-2.23
 
 MAINTAINER josh@grahamis.com
 
