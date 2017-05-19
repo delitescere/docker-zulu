@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:alpine-3.5_glibc-2.23
+FROM frolvlad/alpine-glibc:alpine-3.5_glibc-2.25
 
 MAINTAINER josh@grahamis.com
 
@@ -17,7 +17,7 @@ WORKDIR /tmp
 # Replace duplicate files in JDK bin with links to JRE bin
 RUN \
   echo ipv6 >> /etc/modules && \
-  echo 'http://dl-cdn.alpinelinux.org/alpine/v3.4/main/' > /etc/apk/repositories && \
+  echo 'http://dl-cdn.alpinelinux.org/alpine/v3.5/main/' > /etc/apk/repositories && \
   apk add --no-cache --virtual=build-dependencies ca-certificates wget && \
   sed -i -e 's#:/bin/[^:].*$#:/sbin/nologin#' /etc/passwd && \
   chmod a=rx /etc/shinit.sh && \
