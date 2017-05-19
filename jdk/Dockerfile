@@ -17,7 +17,7 @@ WORKDIR /tmp
 # Replace duplicate files in JDK bin with links to JRE bin
 RUN \
   echo ipv6 >> /etc/modules && \
-  echo 'http://dl-2.alpinelinux.org/alpine/v3.5/main/' > /etc/apk/repositories && \
+  echo 'http://dl-cdn.alpinelinux.org/alpine/v3.4/main/' > /etc/apk/repositories && \
   apk add --no-cache --virtual=build-dependencies ca-certificates wget && \
   sed -i -e 's#:/bin/[^:].*$#:/sbin/nologin#' /etc/passwd && \
   chmod a=rx /etc/shinit.sh && \
@@ -30,15 +30,16 @@ RUN \
     echo "[FATAL] File md5 ${md5} doesn't match published checksum ${checksum}. Exiting." >&2 && \
     exit 1; \
   fi && \
+  rm -f APKINDEX.* && \
   tar -xzf *.tar.gz && \
-  rm *.tar.gz && \
+  rm -f *.tar.gz && \
   mkdir -p $(dirname ${JAVA_HOME}) && \
   mv * ${JAVA_HOME} && \
   cd ${JAVA_HOME} && \
   rm -rf *.zip demo man sample && \
   for ff in ${JAVA_HOME}/bin/*; do f=$(basename $ff); if [ -e ${JRE}/bin/$f ]; then ln -snf ${JRE}/bin/$f $ff; fi; done && \
   chmod a+w ${JRE}/lib ${JRE}/lib/net.properties && \
-  apk del ca-certificates openssl wget  && \
+  apk del ca-certificates openssl wget && \
   rm -rf /tmp/* /var/cache/apk/* && \
   java -version
 
