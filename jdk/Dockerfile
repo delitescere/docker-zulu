@@ -17,12 +17,12 @@ WORKDIR /tmp
 # Replace duplicate files in JDK bin with links to JRE bin
 RUN \
   echo ipv6 >> /etc/modules && \
-  echo 'http://dl-2.alpinelinux.org/alpine/v3.3/main/' > /etc/apk/repositories && \
+  echo 'http://dl-2.alpinelinux.org/alpine/v3.5/main/' > /etc/apk/repositories && \
   apk add --no-cache --virtual=build-dependencies ca-certificates wget && \
   sed -i -e 's#:/bin/[^:].*$#:/sbin/nologin#' /etc/passwd && \
   chmod a=rx /etc/shinit.sh && \
-  checksum="3f95d82bf8ece272497ae2d3c5b56c3b" && \
-  url="https://cdn.azul.com/zulu/bin/zulu8.19.0.1-jdk8.0.112-linux_x64.tar.gz" && \
+  checksum="1931ed3beedee0b16fb7fd37e069b162" && \
+  url="http://cdn.azul.com/zulu/bin/zulu8.21.0.1-jdk8.0.131-linux_x64.tar.gz" && \
   referer="http://zulu.org/download/" && \
   wget --referer "${referer}" "${url}" && \
   md5=$(md5sum *.tar.gz | cut -f1 -d' ') && \
