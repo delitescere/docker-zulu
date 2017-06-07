@@ -1,6 +1,4 @@
-One of the "Smallest JVM containers in the world"™
-
-[![](https://badge.imagelayers.io/delitescere/jdk:latest.svg)](https://imagelayers.io/?images=delitescere/jdk:latest 'Get your own badge on imagelayers.io') Recent pushes may not be reflected in the size. Click the badge to get the latest data.
+[World's smallest JVM containers™](https://grahamis.com/tinyjvm)
 
 If you only need the JRE compact3 profile, see [delitescere/java](https://hub.docker.com/r/delitescere/java/).
 
